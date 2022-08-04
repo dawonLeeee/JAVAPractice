@@ -74,5 +74,5 @@ public class VariableExample2 {
 		System.out.println("ch2 : " + ch2);
 		
 		//출력시 L이나 F같은 리터럴 표기법은 생략된다
-	}
+	}   
 }
