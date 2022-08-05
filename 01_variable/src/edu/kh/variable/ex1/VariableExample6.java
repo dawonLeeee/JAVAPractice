@@ -1,3 +1,4 @@
+package edu.kh.variable.ex1;
 
 import java.util.Scanner; // 자바에서 미리 만들어 둔 Scanner를 얻어옴
 						  // 해당 클래스에서 사용 가능
@@ -5,7 +6,7 @@ import java.util.Scanner; // 자바에서 미리 만들어 둔 Scanner를 얻어
 public class VariableExample6 {
 	public static void main(String[] args) {
 		
-		Scanner : 프로그램 실행 중 키보드 입력을 받을 수 있게 하는 역할
+		//Scanner : 프로그램 실행 중 키보드 입력을 받을 수 있게 하는 역할
 		
 		// 1) class 위에
 		// import java.util.Scanner; 작성

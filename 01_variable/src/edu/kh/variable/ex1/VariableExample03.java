@@ -1,5 +1,6 @@
 package edu.kh.variable.ex1;
 
+
 public class VariableExample03 {
 
 }
