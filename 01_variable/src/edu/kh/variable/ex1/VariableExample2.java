@@ -12,12 +12,13 @@ public class VariableExample2 {
 		int iNum;
 		//정수 값을 저장할 공간 4byte를 메모리에 할당하고
 		//그 공간을 iNum이라고 부르겠다
-		
+		  
 		short sNum;
 		
 		long longNum;
 		//정수 값을 저장할 공간 8byte를 메모리에 저장하고
 		//그 공간을 longNum이라고 부르겠다
+		
 		
 		byte bNum;
 		
