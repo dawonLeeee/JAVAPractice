@@ -141,9 +141,40 @@ public class ConditionExample {
 		
 	}
 	
-	
-	
-	
+	// 놀이기구 탑승 제한 검사
+
+	// 나이가 12세 이상, 키 140.0cm 이상 일 경우에만 "탑승 가능"
+	// 나이가 12미만인 경우 : "적정 연령이 아닙니다."
+	// 키가 140.0cm 미만 : "적정 키가 아닙니다."
+	// 나이를 0세 미만, 100세 초과 시 : "잘못 입력 하셨습니다."
+	public void ex5() {
+		int age = 0;
+		Scanner sc = new Scanner(System.in);
+		
+		
+		System.out.print("나이 입력 : ");
+		age = sc.nextInt();
+		while(age < 0 || age > 100) {
+			System.out.println("잘못 입력 하셨습니다.");
+			System.out.print("나이 입력 : ");
+			age = sc.nextInt();
+		}
+		
+		
+		System.out.print("키 입력 : ");
+		double height = sc.nextDouble();
+		
+		
+		if(age >= 12 && height >= 140.0) 
+			System.out.println("탑승 가능");
+		else {
+			if(age < 12)
+				System.out.println("적정 연령이 아닙니다.");
+			if(height < 140.0) 
+				System.out.println("적정 키가 아닙니다.");
+		}
+			
+	}
 }
 
 
