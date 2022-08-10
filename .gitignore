@@ -1,5 +1,32 @@
 /bin/
-03_control/.settings/org.eclipse.core.resources.prefs
-03_control/.settings/org.eclipse.jdt.core.prefs
-03_control/.classpath
-03_control/.project
+
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Eclipse ###
+.apt_generated
+*.classpath
+*.class
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
