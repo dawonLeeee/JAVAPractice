@@ -1,5 +1,7 @@
 package edu.kh.control.loop.practice;
 
+import java.util.Scanner;
+
 public class LoopPracticeRun {
 	public static void main(String[] args) {
 		LoopPractice lp= new LoopPractice();
@@ -14,8 +16,11 @@ public class LoopPracticeRun {
 //		lp.practice8();
 //		lp.practice9();
 //		lp.practice10();
-//		lp.practice11();
+		lp.practice11();
 //		lp.practice12();
-		lp.practice13();
+//		lp.practice13();
 	}
 }
+	
+	
+	

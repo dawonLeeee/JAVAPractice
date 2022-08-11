@@ -68,6 +68,9 @@ public class LoopPractice {
 				System.out.print(i + " ");
 		}
 	}
+	
+	
+	
 // ====================================================================
 	
 	public void practice5() {
@@ -146,6 +149,20 @@ public class LoopPractice {
 			
 			System.out.println();
 		}
+		
+		
+		//이런 방법도 있다
+		/*
+		for(int col = 1; col <= num; col++) {
+			if(col <= num - row) {
+				System.out.println(" ");
+			}else {
+				System.out.println("*");
+			}
+		}
+		*/
+		
+		
 	}
 // ====================================================================
 	
@@ -175,21 +192,32 @@ public class LoopPractice {
 		System.out.print("정수 입력 : ");
 		int num = sc.nextInt();
 		
-		for(int i = 0; i < num; i++) {
-			for(int j = 0; j < (num - i); j++) {
-				System.out.print(" ");
+		for(int col = 1; col<= num; col++) {
+			for(int i = 1; i <= 2 * num - 1; i++) {
+				if(i > (num-col) && i <(num+col))
+					System.out.print("*");
+				else
+					System.out.print(" ");
 			}
-			for(int j = 0; j <= 2*i; j++) {
-				System.out.print("*");
-			}
-			for(int j = 0; j < (num - i); j++) {
-				System.out.print(" ");
-			}
-			
-			
 			System.out.println();
 		}
 	}
+		
+
+//		for(int i = 0; i < num; i++) {
+//			for(int j = 0; j < (num - i); j++) {
+//				System.out.print(" ");
+//			}
+//			for(int j = 0; j <= 2*i; j++) {
+//				System.out.print("*");
+//			}
+//			for(int j = 0; j < (num - i); j++) {
+//				System.out.print(" ");
+//			}			
+//			System.out.println();
+//			}
+		
+	
 // ====================================================================
 	
 	public void practice12() {
