@@ -87,6 +87,7 @@ public class BranchExample {
 		int rock = 1;
 		int scissor = 2;
 		int paper = 3;
+		boolean flag = false;
 		
 		
 		System.out.println("가위 바위 보 게임");
@@ -113,36 +114,24 @@ public class BranchExample {
 				System.out.println("비겼습니다.");
 				draw++;
 			}
-			else if(player == 1) {
-				if(computer == 3) {
-					win++;
-					System.out.println("플레이어 승!");
-				}
-				else {
-					System.out.println("졌습니다ㅠㅠ");
-					lose++;
-				}
+			else if(
+					(player == 1 && computer == 3) ||
+					(player == 2 && computer == 1) ||
+					(player == 3 && computer == 2))
+				flag = true;
+			else
+				flag = false;
+			
+			
+			if(flag) {
+				System.out.println("플레이어 승!");
+				win++;
+			} else {
+				System.out.println("졌습니다ㅠㅠ");
+				lose++;
+			
 			}
-			else if(player == 2) {
-				if(computer == 1) {
-					System.out.println("플레이어 승!");
-					win++;
-				}
-				else {
-					System.out.println("졌습니다ㅠㅠ");
-					lose ++;
-				}
-			}
-			else {// player == 3
-				if(computer == 2) {
-					System.out.println("플레이어 승!");
-					win++;
-				}
-				else {
-					System.out.println("졌습니다ㅠㅠ");
-					lose ++;
-				}
-			}
+				
 			
 			
 			System.out.printf("현재 기록 : %d승 %d무 %d패\n\n", win, draw, lose);
