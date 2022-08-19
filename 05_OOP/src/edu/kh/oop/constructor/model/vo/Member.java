@@ -27,4 +27,20 @@ public class Member {
 		System.out.println("memberAge : " + memberAge);
 		
 	}
+
+	// this() 생성자
+	public Member(int memberAge, String memberPhone) {
+		
+		//전달받은 매개변수로 현재 객체 필드 초기화
+		this.memberAge = memberAge;
+		this.memberPhone = memberPhone;
+	}
+	
+	
+	public Member(String memberId, int memberAge, String memberPhone) {
+		this(memberAge, memberPhone); // this생성자 호출
+		//전달받은 매개변수로 현재 객체 필드 초기화
+		this.memberId = memberId;
+		
+	}
 }
