@@ -2,6 +2,7 @@ package edu.kh.emp.view;
 
 
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -18,67 +19,73 @@ public class EmployeeView {
 		
 		
 		while(flag) {
+			try {
 		
-			System.out.println("==============[ 사원 서비스 선택 ]==============");
-		
-			System.out.println("1. 새로운 사원 정보 추가");
-			System.out.println("2. 전체 사원 정보 조회");
-			System.out.println("3. 사번이 일치하는 사원 정보 조회");
-			System.out.println("4. 사번이 일치하는 사원 정보 수정");
-			System.out.println("5. 사번이 일치하는 사원 정보 삭제");
-			System.out.println("6. 입력 받은 부서와 일치 모든 사원 정보 조회");
-			System.out.println("7. 입력 받은 급여 이상을 받는 모든 사원 정보 조회");
-			System.out.println("8. 부서별 급여 합 전체 조회");
-			System.out.println("0. 프로그램 종료");
-			System.out.println();
+				System.out.println("==============[ 사원 서비스 선택 ]==============");
 			
-			System.out.print("번호 선택 >> ");
-			int input = sc.nextInt();
-			sc.nextLine();
-			System.out.println();
-			
-			
-			switch(input) {
-			
-				case 1 : //새로운 사원 정보 추가
-					addNewEmpl();
-					break;
-					
-				case 2 : //전체 사원 정보 조회
-					viewAllEmpl();
-					break;
-					
-				case 3 : // 사번이 일치하는 사원 정보 조회
-					viewOneEmpl();
-					break;
-					
-				case 4 : // 사번이 일치하는 사원 정보 수정
-					editEmpl();
-					break;
-					
-				case 5 : // 사번이 일치하는 사원 정보 삭제
-					deleteEmpl();
-					break;
-					
-				case 6 : // 입력 받은 부서와 일치 모든 사원 정보 조회
-					viewDepartmentImpl();
-					break;
-					
-				case 7 : // 입력 받은 급여 이상을 받는 모든 사원 정보 조회
-					viewImplBySalary();
-					break;
-					
-				case 8 : // 부서별 급여 합 전체 조회
-					viewSalaryByDepartment();
-					break;
-					
-				case 0 : // 프로그램 종료
-					System.out.println("==============[ 프로그램 종료 ]==============");
-					flag = false;
-					break;
-					
-				default : 
-					System.out.println("잘못 입력하셨습니다.");
+				System.out.println("1. 새로운 사원 정보 추가");
+				System.out.println("2. 전체 사원 정보 조회");
+				System.out.println("3. 사번이 일치하는 사원 정보 조회");
+				System.out.println("4. 사번이 일치하는 사원 정보 수정");
+				System.out.println("5. 사번이 일치하는 사원 정보 삭제");
+				System.out.println("6. 입력 받은 부서와 일치 모든 사원 정보 조회");
+				System.out.println("7. 입력 받은 급여 이상을 받는 모든 사원 정보 조회");
+				System.out.println("8. 부서별 급여 합 전체 조회");
+				System.out.println("0. 프로그램 종료");
+				System.out.println();
+				
+				System.out.print("번호 선택 >> ");
+				int input = -1;
+				input = sc.nextInt();
+				sc.nextLine();
+				System.out.println();
+				
+				
+				switch(input) {
+				
+					case 1 : //새로운 사원 정보 추가
+						addNewEmpl();
+						break;
+						
+					case 2 : //전체 사원 정보 조회
+						viewAllEmpl();
+						break;
+						
+					case 3 : // 사번이 일치하는 사원 정보 조회
+						viewOneEmpl();
+						break;
+						
+					case 4 : // 사번이 일치하는 사원 정보 수정
+						editEmpl();
+						break;
+						
+					case 5 : // 사번이 일치하는 사원 정보 삭제
+						deleteEmpl();
+						break;
+						
+					case 6 : // 입력 받은 부서와 일치 모든 사원 정보 조회
+						viewDepartmentImpl();
+						break;
+						
+					case 7 : // 입력 받은 급여 이상을 받는 모든 사원 정보 조회
+						viewImplBySalary();
+						break;
+						
+					case 8 : // 부서별 급여 합 전체 조회
+						viewSalaryByDepartment();
+						break;
+						
+					case 0 : // 프로그램 종료
+						System.out.println("==============[ 프로그램 종료 ]==============");
+						flag = false;
+						break;
+						
+					default : 
+						System.out.println("잘못 입력하셨습니다.");
+				}
+			} catch(InputMismatchException e) {
+				System.out.println("잘못 입력하셨습니다. 숫자만 입력해주세요");
+				e.printStackTrace();
 			}
 		}
 		
@@ -141,13 +148,14 @@ public class EmployeeView {
 		else
 			for(Employee emp : empList) 
 				System.out.println(emp.toString());
-			
+		System.out.println();	
 	}
 	
 	/**
 	 * 3. 사번이 일치하는 사원 정보 조회
 	 */
 	public void viewOneEmpl() {
+		System.out.println("[[ 사번이 일치하는 사원 정보 조회 ]]\n");
 		System.out.print("사원 번호(사번) 입력 : ");
 		int empId = sc.nextInt();
 		sc.nextLine();
@@ -167,6 +175,7 @@ public class EmployeeView {
 	 * 4. 사번이 일치하는 사원 정보 수정
 	 */
 	public void editEmpl() {
+		System.out.println("[[ 사번이 일치하는 사원 정보 수정 ]]\n");
 		System.out.print("사원 번호(사번) 입력 : ");
 		int empId = sc.nextInt();
 		sc.nextLine();
@@ -241,6 +250,7 @@ public class EmployeeView {
 	 * 5. 사번이 일치하는 사원 정보 삭제
 	 */
 	public void deleteEmpl() {
+		System.out.println("[[ 사번이 일치하는 사원 정보 삭제 ]]\n");
 		System.out.print("사원 번호(사번) 입력 : ");
 		int empId = sc.nextInt();
 		sc.nextLine();
@@ -261,6 +271,7 @@ public class EmployeeView {
 	 * 6. 입력 받은 부서와 일치 모든 사원 정보 조회
 	 */
 	public void viewDepartmentImpl() {
+		System.out.println("[[ 입력 받은 부서와 일치 모든 사원 정보 조회 ]]\n");
 		System.out.print("부서명 입력 : ");
 		String departmentTitle = sc.nextLine();
 		
@@ -278,6 +289,7 @@ public class EmployeeView {
 	 * 7. 입력 받은 급여 이상을 받는 모든 사원 정보 조회
 	 */
 	public void viewImplBySalary() {
+		System.out.println("[[ 입력 받은 급여 이상을 받는 모든 사원 정보 조회 ]]\n");
 		System.out.print("급여 입력 : ");
 		int salary = sc.nextInt();
 		sc.nextLine();
@@ -297,12 +309,13 @@ public class EmployeeView {
 	 * 8. 부서별 급여 합 전체 조회
 	 */
 	private void viewSalaryByDepartment() {
+		System.out.println("[[ 부서별 급여 합 전체 조회 ]]\n");
 		
 		HashMap<String, Integer> salaryMap = service.viewSalaryByDepartment();
 		
 		if(salaryMap.size() != 0) {
 			for(String s : salaryMap.keySet())
-				System.out.printf("%s부서 급여 합 : %d\n", s, salaryMap.get(s));
+				System.out.printf("%s부서 급여 합 : %d(만원)\n", s, salaryMap.get(s));
 		} else
 			System.out.println("사원이 DB에 아무도 없습니다.");
 		System.out.println();
