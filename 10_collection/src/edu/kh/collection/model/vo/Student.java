@@ -1,8 +1,9 @@
 package edu.kh.collection.model.vo;
 
 import java.util.Objects;
+import java.util.Comparator;
 
-public class Student {
+public class Student implements Comparable<Student> {
 
 	private String name;
 	private int age;
@@ -21,6 +22,18 @@ public class Student {
 		this.address = address;
 		this.gender = gender;
 		this.score = score;
+	}
+	
+	@Override
+	public int compareTo(Student o) {
+		return this.age - o.age;
+	}
+	
+	
+	public int compare(Student o1, Student o2) {
+    
+		return o1.score - o2.score;
+		
 	}
 
 	public String getName() {
@@ -63,29 +76,7 @@ public class Student {
 		this.score = score;
 	}
 
-	@Override
-	public String toString() {
-		return "Student [name=" + name + ", age=" + age + ", address=" + address + ", gender=" + gender + ", score="
-				+ score + "]";
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(address, age, gender, name, score);
-	} // 필드가 모두 동일하면 같은 숫자가 반환된다
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Student other = (Student) obj;
-		return Objects.equals(address, other.address) && age == other.age && gender == other.gender
-				&& Objects.equals(name, other.name) && score == other.score;
-	}
+	
 //	
 //	 HashCode() 오버라이딩
 //	 -> Hash라는 단어가 들어가는 컬렉션 사용시 반드시 오버라이딩 해야하는 메서드
